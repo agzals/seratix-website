@@ -4,13 +4,13 @@
 // ================================================================
 export const WEDDING = {
   groom: {
-    nick: 'Fitri',
+    nick: 'Agzal',
     full: 'Agzal Sufi, S.Kom.',
-    parents: 'Putra pertama dari Bapak Hendra Pratama & Ibu Sari Wulandari',
+    parents: 'Putra pertama dari Bapak Fauzi & Ibu Eni Rahmalia',
     ig: 'agzalls',
   },
   bride: {
-    nick: 'Agzal',
+    nick: 'Fitri',
     full: 'Fitri Andita, S.E.',
     parents: 'Putri kedua dari Bapak Agus Santoso & Ibu Rina Kusuma',
     ig: 'fitriandita',
@@ -85,5 +85,5 @@ export const WEDDING = {
   // Nomor WA untuk konfirmasi RSVP (format 62xxx). Demo: kosongkan agar RSVP hanya tampil di halaman.
   rsvpWhatsapp: '',
 
-  hashtag: '#AgzalFitriForever',
+  hashtag: '#AgzalFitriForeverAnjay',
 }
