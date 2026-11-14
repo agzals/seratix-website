@@ -1,10 +1,10 @@
 import Seo from '@/components/common/Seo'
 import {
-  AboutSection, CtaSection, HeroSection, MarqueeSection, PortfolioSection,
+  AboutSection, CtaSection, HeroSection, HoundSection, MarqueeSection, PortfolioSection,
   ProcessSection, ServicesSection, StatsSection,
 } from '@/features/home'
 
-// Urutan section beranda — tukar/hapus/tambah baris di sini.
+// Urutan section beranda: tukar / hapus / tambah baris di sini.
 export default function HomePage() {
   return (
     <>
@@ -12,6 +12,7 @@ export default function HomePage() {
       <HeroSection />
       <MarqueeSection />
       <ServicesSection />
+      <HoundSection />
       <StatsSection />
       <PortfolioSection />
       <ProcessSection />

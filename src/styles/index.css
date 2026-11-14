@@ -1,6 +1,7 @@
-/* Urutan: token -> base -> layout -> sections -> responsive */
+/* Urutan import penting: token -> base -> layout -> sections -> brand -> responsive */
 @import './tokens.css';
 @import './base.css';
 @import './layout.css';
 @import './sections.css';
+@import './brand.css';
 @import './responsive.css';

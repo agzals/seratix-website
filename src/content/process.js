@@ -14,5 +14,5 @@ export const VALUES = [
 // Teks berjalan (marquee) di bawah hero
 export const MARQUEE = [
   'Undangan Digital', 'Website Event', 'RSVP', 'QR Check-in',
-  'Workflow Automation', 'Dashboard', 'Omnichannel', 'Integrasi Sistem',
+  'Workflow Automation', 'Dashboard', 'Omnichannel', 'Integrasi Sistem', 'Seratix Hound',
 ]

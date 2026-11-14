@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import { SITE } from '@/config/site'
-import { MAIN_NAV } from '@/config/navigation'
+import { MAIN_NAV, ROUTES } from '@/config/navigation'
 import { SERVICE_CATEGORIES } from '@/content/services'
+import { HOUND, HOUND_LINKS } from '@/config/products'
 import { waLink } from '@/lib/whatsapp'
 
 export default function Footer() {
@@ -10,7 +11,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <Logo light />
+          <Logo onDark />
           <p className="footer-tagline">{SITE.tagline}</p>
         </div>
         <div>
@@ -18,8 +19,14 @@ export default function Footer() {
           <ul>{MAIN_NAV.map((n) => <li key={n.to}><Link to={n.to}>{n.label}</Link></li>)}</ul>
         </div>
         <div>
-          <h5>Layanan</h5>
-          <ul>{SERVICE_CATEGORIES.map((c) => <li key={c.slug}><Link to={`/layanan/${c.slug}`}>{c.label}</Link></li>)}</ul>
+          <h5>Layanan &amp; Produk</h5>
+          <ul>
+            {SERVICE_CATEGORIES.map((c) => <li key={c.slug}><Link to={`/layanan/${c.slug}`}>{c.label}</Link></li>)}
+            <li>
+              <Link to={ROUTES.hound}>{HOUND.name} <span className="footer-badge">{HOUND.status}</span></Link>
+            </li>
+            {HOUND_LINKS.live && <li><a href={HOUND_LINKS.link()} target="_blank" rel="noreferrer">Buka aplikasi Hound ↗</a></li>}
+          </ul>
         </div>
         <div>
           <h5>Kontak</h5>

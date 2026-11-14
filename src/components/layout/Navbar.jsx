@@ -9,6 +9,8 @@ import { useScrolled } from '@/hooks/useScrolled'
 import { waLink } from '@/lib/whatsapp'
 import { EASE } from '@/config/motion'
 
+const Badge = ({ children }) => <span className="nav-badge">{children}</span>
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const scrolled = useScrolled()
@@ -33,6 +35,7 @@ export default function Navbar() {
               {({ isActive }) => (
                 <>
                   {item.label}
+                  {item.badge && <Badge>{item.badge}</Badge>}
                   {isActive && <motion.span layoutId="nav-underline" className="nav-underline" />}
                 </>
               )}
@@ -68,7 +71,10 @@ export default function Navbar() {
             >
               {MAIN_NAV.map((item) => (
                 <motion.div key={item.to} variants={{ hidden: { opacity: 0, x: -16 }, show: { opacity: 1, x: 0 } }}>
-                  <NavLink to={item.to} className="mobile-link">{item.label}</NavLink>
+                  <NavLink to={item.to} className="mobile-link">
+                    {item.label}
+                    {item.badge && <Badge>{item.badge}</Badge>}
+                  </NavLink>
                 </motion.div>
               ))}
               <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>

@@ -2,13 +2,16 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Button } from '@/components/ui'
 import { SERVICE_CATEGORIES } from '@/content/services'
+import { HOUND_TOPIC_LABEL } from '@/config/products'
 import { buildConsultationMessage, waLink } from '@/lib/whatsapp'
 
-const OPTIONS = [...SERVICE_CATEGORIES.flatMap((c) => c.items.map((i) => i.name)), 'Lainnya']
-const INITIAL = { nama: '', kontak: '', layanan: OPTIONS[0], pesan: '' }
+// Pilihan layanan otomatis dari content/services.js, ditambah produk Hound.
+export const OPTIONS = [...SERVICE_CATEGORIES.flatMap((c) => c.items.map((i) => i.name)), HOUND_TOPIC_LABEL, 'Lainnya']
 
-export default function ContactForm() {
-  const [form, setForm] = useState(INITIAL)
+/** `defaultService`: label layanan yang dipilih di awal (mis. dari /kontak?topik=hound). Nilai di luar OPTIONS diabaikan. */
+export default function ContactForm({ defaultService }) {
+  const initialService = OPTIONS.includes(defaultService) ? defaultService : OPTIONS[0]
+  const [form, setForm] = useState({ nama: '', kontak: '', layanan: initialService, pesan: '' })
   const [error, setError] = useState('')
   const [shake, setShake] = useState(0)
 

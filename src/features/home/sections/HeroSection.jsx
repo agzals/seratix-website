@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { Badge, Button, Container } from '@/components/ui'
 import { Magnetic, SplitText } from '@/components/motion'
 import { SITE } from '@/config/site'
+import { HOUND } from '@/config/products'
 import { ROUTES } from '@/config/navigation'
 import { EASE } from '@/config/motion'
 import HeroMockup from './HeroMockup'
@@ -20,6 +22,14 @@ export default function HeroSection() {
       <div className="blob blob-2" aria-hidden="true" />
       <Container className="hero-grid">
         <div>
+          {/* Pengumuman produk baru. Tautan ke halaman Hound di website ini (selalu valid). */}
+          <motion.div {...fade(0.02)}>
+            <Link to={ROUTES.hound} className="announce">
+              <span className="announce-new">Baru · {HOUND.status}</span>
+              <span className="announce-text">{HOUND.name}, inbox WhatsApp + Instagram</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          </motion.div>
           <motion.div {...fade(0.1)}><Badge>Digital Solutions & Automation</Badge></motion.div>
           <h1>
             <SplitText text="Wujudkan Ide Digital Anda Bersama" delay={0.2} />{' '}
